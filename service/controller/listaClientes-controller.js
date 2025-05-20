@@ -1,3 +1,4 @@
+ import { clienteService } from "../cliente-service.js"
  const criaNovaLinha = (nome, email) => {
     const linhaNovoCliente = document.createElement('tr')
     const conteudo = `<td class="td" data-td>${nome}</td>
@@ -14,3 +15,9 @@
  } 
 
 const tabela = document.querySelector('[data-tabela]')
+
+clienteService.listaClientes()
+.then(data => {
+        data.forEach(elemento => {
+            tabela.appendChild(criaNovaLinha(elemento.nome, elemento.email))
+})})

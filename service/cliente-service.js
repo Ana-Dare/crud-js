@@ -5,9 +5,8 @@ const listaClientes = () => {
     })
 }
 
-listaClientes()
-.then(data => {
-        data.forEach(elemento => {
-            tabela.appendChild(criaNovaLinha(elemento.nome, elemento.email))
-})})
+export const clienteService = {
+    listaClientes
+}
+
 
