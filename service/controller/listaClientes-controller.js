@@ -24,6 +24,7 @@ tabela.addEventListener('click', (evento) =>{
    let ehBotaoDeletar = evento.target.className ===
     'botao-simples botao-simples--excluir'
     if(ehBotaoDeletar){
+        console.log('botão clicado')
         const linhaCliente = evento.target.closest('[data-id]')
         let id = linhaCliente.dataset.id
         clienteService.removeCliente(id)
